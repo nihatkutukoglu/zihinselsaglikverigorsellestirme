@@ -1,11 +1,64 @@
-🧠 Ekran Süresi ve Zihinsel İyi Oluş İlişkisi AnaliziBu proje, bir veri setini kullanarak Ekran Süresi, Stres Seviyesi, Uyku Kalitesi ve diğer yaşam tarzı faktörleri ile Zihinsel İyi Oluş Endeksi arasındaki korelasyonları ve ilişkileri incelemektedir. Projenin amacı, hangi faktörlerin zihinsel sağlık üzerinde en güçlü etkiye sahip olduğunu keşfetmektir.Analiz, Python'ın güçlü veri bilimi kütüphaneleri kullanılarak gerçekleştirilmiştir.🛠️ Kullanılan KütüphanelerPandas: Veri yükleme, temizleme ve manipülasyonu için.NumPy: Sayısal işlemler ve dizi manipülasyonları için.Matplotlib: Grafiklerin temel çizimi için.Seaborn: Matplotlib üzerine kurulu, daha estetik ve istatistiksel veri görselleştirmesi için.📁 Proje Dosya Yapısı.
-├── ScreenTime vs MentalWellness.csv  # Ham veri seti
-├── mental_wellness_analysis.py       # Temel analiz ve görselleştirme kodunun bulunduğu Python betiği
-├── README.md                         # Bu açıklama dosyası
-└── Görseller/                        # Kod çalıştırıldığında oluşturulan grafikler (Oluşturulması Önerilir)
+🧠 Ekran Süresi ve Zihinsel İyi Oluş İlişkisi Analizi
+Bu proje, bir veri setini kullanarak Ekran Süresi, Stres Seviyesi, Uyku Kalitesi ve diğer yaşam tarzı faktörleri ile Zihinsel İyi Oluş Endeksi arasındaki korelasyonları ve ilişkileri inceleyen kapsamlı bir veri analiz çalışmasıdır. Projenin temel amacı, zihinsel sağlık üzerinde en güçlü ve anlamlı etkiye sahip olan faktörleri bilimsel yöntemlerle keşfetmektir.
+⚙️ Proje Ortamı ve Kütüphaneler
+Bu analiz, Python programlama dili ve veri bilimi için endüstri standardı olan aşağıdaki kütüphaneler kullanılarak gerçekleştirilmiştir:
+Pandas: Veri çerçeveleri (DataFrame) ile hızlı veri yükleme, temizleme ve manipülasyonu için.
+NumPy: Yüksek performanslı sayısal hesaplamalar ve dizi (array) işlemleri için.
+Matplotlib: Grafiklerin temel çizim altyapısını sağlar.
+Seaborn: Matplotlib üzerine kurulu olup, istatistiksel görselleştirmeleri daha estetik ve bilgilendirici bir şekilde oluşturmayı sağlar.
+📁 Proje Yapısı
+Proje dosyaları aşağıdaki temel yapıda düzenlenmiştir. mental_wellness_analysis.py betiği çalıştırıldığında görsel çıktılar otomatik olarak .png formatında kaydedilecektir.
+.
+├── ScreenTime vs MentalWellness.csv  # Analizin yapıldığı ham veri seti
+├── mental_wellness_analysis.py       # Tüm analiz, görselleştirme ve bulguları içeren ana Python kodu
+├── README.md                         # Şu an okumakta olduğunuz dosya
+└── Görseller/                        # Kod çalıştırıldığında oluşan tüm grafik çıktıları bu klasöre taşınabilir.
     ├── 2_1_temel_degisken_dagilimlari.png
     ├── 3_1_korelasyon_heatmap.png
     └── ... (Diğer tüm grafik çıktıları)
-📊 Analiz Adımları ve BulgularProje, mental_wellness_analysis.py betiğinde aşağıdaki 4 ana adımda ilerlemektedir:1. Veri Yükleme ve Ön İşlemeScreenTime vs MentalWellness.csv dosyası yüklendi.Gereksiz (boş) sütunlar temizlendi (Unnamed: 15).Sayısal ve kategorik sütunların temel istatistikleri ve veri tipleri incelendi.Kritik Gözlem: Ortalama Zihinsel İyi Oluş Endeksi'nin düşük olması ve Stres Seviyesi'nin yüksek olması, veri setindeki genel zorlanmaya işaret etmektedir.2. Keşifçi Veri Analizi (EDA)Dağılım Grafikleri (2_1_temel_degisken_dagilimlari.png): Zihinsel İyi Oluş ve Stres Seviyesi gibi kilit değişkenlerin dağılımları histogramlar ile görselleştirildi.Kategorik Dağılımlar (2_2_kategorik_dagilimlar.png): Cinsiyet, Meslek ve Çalışma Modu'nun veri setindeki dağılımı sayım grafikleri (countplot) ile incelendi.3. Korelasyon ve İlişki Analizi3.1. Korelasyon Matrisi (Heatmap)Tüm sayısal değişkenler arasındaki Pearson Korelasyon Katsayısı hesaplandı ve bir Isı Haritası (3_1_korelasyon_heatmap.png) ile görselleştirildi.DeğişkenKorelasyon (R)İlişkinin GücüStres Seviyesi-0.89Çok Güçlü NegatifUyku Kalitesi-0.89Çok Güçlü NegatifÜretkenlik+0.75Güçlü PozitifToplam Ekran Süresi-0.74Güçlü Negatif3.2. Regresyon Grafikleri (Regplot)En güçlü ilişkilere sahip değişkenler için regresyon çizgileri (3_2_ana_iliskiler_regplot.png) çizilerek, doğrusal eğilimler teyit edildi.3.3. Grup Karşılaştırmaları (Boxplot)Uyku Kalitesi ve İyi Oluş: Uyku kalitesi (1'den 4'e) yükseldikçe, Zihinsel İyi Oluş Endeksi'nin ortanca değerinde istikrarlı ve keskin bir artış gözlemlenmiştir. Bu, projenin en önemli bulgusudur.Meslek ve İyi Oluş: Farklı meslek gruplarının ortanca iyi oluş puanları karşılaştırılmıştır.4. Bulgular ÖzetiAnalizin son aşamasında, elde edilen kilit korelasyonlar ve ortanca değer karşılaştırmaları (özellikle uyku kalitesi) konsol çıktısı olarak özetlenmiştir.🚀 Betiği ÇalıştırmaBu analizi yerel ortamınızda çalıştırmak için:Gerekli kütüphaneleri kurun:pip install pandas numpy matplotlib seaborn
-ScreenTime vs MentalWellness.csv dosyasının, mental_wellness_analysis.py dosyası ile aynı klasörde olduğundan emin olun.Python betiğini çalıştırın:python mental_wellness_analysis.py
-(Not: Betik çalıştıktan sonra, tüm grafikler .png dosyaları olarak aynı klasöre kaydedilecektir.)
+
+
+📈 Analiz Adımları ve Temel Bulgular
+Proje, mental_wellness_analysis.py dosyasında 4 ana aşamada ilerlemektedir:
+1. Veri Ön İşleme (Preprocessing)
+Veri seti yüklendi ve Unnamed: 15 gibi gereksiz (boş) sütunlar temizlendi.
+describe() ve info() metotları ile sayısal ve kategorik verilerin temel istatistikleri ve veri tipleri kontrol edildi.
+İlk Kritik Gözlem: Ortalama Zihinsel İyi Oluş Endeksi'nin düşük (yaklaşık 20) ve Stres Seviyesi'nin ise yüksek (yaklaşık 8.15) olduğu tespit edildi.
+2. Keşifçi Veri Analizi (EDA)
+Dağılım Analizleri: histplot ve countplot kullanılarak Zihinsel İyi Oluş, Stres Seviyesi ve Uyku Kalitesi gibi değişkenlerin sıklık dağılımları görselleştirildi.
+Bu analizler, verinin çarpık yapısını ve çoğu kullanıcının düşük iyi oluş, yüksek stres ve düşük uyku kalitesi bildirdiğini ortaya çıkardı.
+3. Korelasyon ve İlişki Analizi
+3.1. Korelasyon Matrisi (Heatmap)
+Korelasyon analizi ile Zihinsel İyi Oluş Endeksi'ni etkileyen faktörler sayısal olarak belirlendi:
+Değişken
+Korelasyon (R)
+İlişkinin Yönü ve Gücü
+Stres Seviyesi
+-0.89
+Çok Güçlü Negatif (Stres arttıkça İyi Oluş azalır)
+Uyku Kalitesi
+-0.89
+Çok Güçlü Negatif (Kalite azaldıkça İyi Oluş azalır)
+Üretkenlik
++0.75
+Güçlü Pozitif (Üretkenlik arttıkça İyi Oluş artar)
+Toplam Ekran Süresi
+-0.74
+Güçlü Negatif (Ekran süresi arttıkça İyi Oluş azalır)
+
+3.2. Regresyon ve Kutu Grafikleri
+Regresyon Grafikleri (regplot): Güçlü ilişkiler (Stres vs. İyi Oluş) grafiksel olarak teyit edildi. Regresyon doğrusunun eğimi, ilişkinin doğrusal olduğunu gösterdi.
+Uyku Kalitesi (Boxplot): Uyku Kalitesi puanı 1'den 4'e yükseldikçe, Zihinsel İyi Oluş Endeksi'nin ortanca değerinde dramatik bir artış gözlemlenmiştir. Bu, uyku kalitesinin en güçlü müdahale noktası olduğunu gösteren kritik bir bulgudur.
+4. Bulgular Özeti
+Kodun son bloğunda, yukarıdaki tüm analizlere dayanarak elde edilen en güçlü pozitif ve negatif korelasyonlar konsola özet tablo olarak yazdırılmıştır.
+🚀 Betiği Yerelde Çalıştırma
+Projeyi kendi bilgisayarınızda çalıştırmak ve görsel çıktıları üretmek için aşağıdaki adımları izleyin:
+Gerekli kütüphaneleri Python ortamınıza kurun:
+pip install pandas numpy matplotlib seaborn
+
+
+ScreenTime vs MentalWellness.csv ve mental_wellness_analysis.py dosyalarını aynı klasöre indirin.
+Komut satırında o klasöre gidin ve betiği çalıştırın:
+python mental_wellness_analysis.py
+
+Tüm grafikler 7 ayrı .png dosyası olarak klasörünüze kaydedilecektir.
